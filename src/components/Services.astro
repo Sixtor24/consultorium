@@ -1,0 +1,90 @@
+---
+import ServiceCard from './ui/ServiceCard.astro';
+
+const services = [
+  {
+    title: ["Search engine", "optimization"],
+    image:
+      "/src/assets/search.svg",
+    bgColor: "bg-[#F3F3F3]",
+    labelBg: "bg-[#639]",
+    labelText: "text-white",
+    bgButton: "bg-[#191A23]",
+    arrowColor: "text-[#E6CDF8]",
+    learnMore: "text-black",
+  },
+  {
+    title: ["Pay-per-click", "advertising"],
+    image:
+      "/src/assets/web.svg",
+    bgColor: "bg-[#9B77B5]",
+    labelBg: "bg-white",
+    labelText: "text-black",
+    bgButton: "bg-[#191A23]",
+    arrowColor: "text-white",
+    learnMore: "text-black",
+  },
+  {
+    title: ["Social Media", "Marketing"],
+    image:
+      "/src/assets/media.svg",
+    bgColor: "bg-[#191A23]",
+    labelBg: "bg-white",
+    labelText: "text-black",
+    bgButton: "bg-white",
+    arrowColor: "text-[#9B77B5]",
+    learnMore: "text-white",
+  },
+  {
+    title: ["Email", "Marketing"],
+    image:
+      "/src/assets/email.svg",
+    bgColor: "bg-[#F3F3F3]",
+    labelBg: "bg-[#639]",
+    labelText: "text-white",
+    bgButton: "bg-[#191A23]",
+    arrowColor: "text-[#E6CDF8]",
+    learnMore: "text-black",
+  },
+  {
+    title: ["Content", "Creation"],
+    image:
+      "/src/assets/messages.svg",
+    bgColor: "bg-[#9B77B5]",
+    labelBg: "bg-white",
+    labelText: "text-black",
+    bgButton: "bg-[#191A23]",
+    arrowColor: "text-white",
+    learnMore: "text-black",
+  },
+  {
+    title: ["Analytics and", "Tracking"],
+    image:
+      "/src/assets/analytics.svg",
+    bgColor: "bg-[#191A23]",
+    labelBg: "bg-[#639]",
+    labelText: "text-white",
+    bgButton: "bg-white",
+    arrowColor: "text-[#9B77B5]",
+    learnMore: "text-white",
+  },
+];
+---
+
+<section class="mt-[140px] max-md:mt-10">
+  <div class="flex gap-10 flex-wrap px-[100px] max-md:px-5">
+    <div class="text-[40px] text-white font-medium whitespace-nowrap">
+      <div class="bg-[#663399] px-[7px] rounded-[7px]">Services</div>
+    </div>
+    <p class="text-secondary text-lg font-normal w-[580px] max-md:max-w-full">
+      At our digital marketing agency, we offer a range of services to help
+      businesses grow and succeed online. These services include:
+    </p>
+  </div>
+
+  <div class="flex flex-wrap gap-10 mt-20 px-[100px] max-md:px-5">
+    {services.map((service) => (
+      <ServiceCard {...service} />
+    ))}
+  </div>
+</section>

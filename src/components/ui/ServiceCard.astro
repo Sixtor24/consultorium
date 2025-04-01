@@ -1,0 +1,45 @@
+---
+interface ServiceProps {
+  title: string[];
+  image: string;
+  bgColor: string;
+  labelBg: string;
+  labelText: string;
+  bgButton: string;
+  arrowColor: string;
+  learnMore: string;
+}
+
+const { title, image, bgColor, labelBg, bgButton, labelText, arrowColor, learnMore } = Astro.props as ServiceProps;
+---
+
+<div
+  class={`justify-between items-center border shadow-[0px_5px_0px_0px_#191A23] flex min-w-60 gap-[40px_67px] overflow-hidden flex-wrap w-[600px] p-[50px] rounded-[45px] border-solid max-md:max-w-full max-md:px-5 ${bgColor}`}
+>
+  <div class="self-stretch flex flex-col items-stretch justify-center my-auto">
+    <div class={`flex flex-col items-stretch text-3xl font-medium ${labelText}`}>
+      {title.map((line: string,) => (
+        <div class={`px-[7px] rounded-[7px] ${labelBg}`}>
+          {line}
+        </div>
+      ))}
+    </div>
+    <div class="flex items-center pt-20 gap-4">
+      <div class={`w-10 h-10 flex items-center justify-center ${bgButton} rounded-full`}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class={`${arrowColor} w-8 h-8`}>
+          <path fill="currentColor" d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7L14.6 7H7q-.425 0-.712-.288T6 6t.288-.712T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17t-.712-.288T16 16z"/>
+        </svg>
+      </div>
+      <button class={`text-xl ${learnMore} font-normal leading-[1.4]transition-colors`}>
+        Learn more
+      </button>
+    </div>  
+  </div>
+  <div class="self-stretch flex flex-col items-stretch justify-center w-[210px] my-auto py-0.5">
+    <img
+      src={image}
+      class="aspect-[1.27] object-contain w-[210px]"
+      alt="Service illustration"
+    />
+  </div>
+</div>
